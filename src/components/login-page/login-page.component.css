@@ -1,0 +1,21 @@
+#form{
+    text-align: center;
+    margin-top: 200px;
+}
+
+#button {
+    text-align: center;    
+    margin-top: 10px;
+}
+
+#username{
+    text-align: center;    
+    margin-top: 200px;
+
+}
+
+.form-group{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}

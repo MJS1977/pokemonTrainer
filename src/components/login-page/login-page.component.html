@@ -1,0 +1,8 @@
+<div class="form-group">
+    <form id="form" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+
+        <label>Give a valid username:</label><input class="form-control" type="text" name="name" ngModel
+            placeholder="name">
+        <button id="button" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

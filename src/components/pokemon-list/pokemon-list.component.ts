@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'pokemon-list',
@@ -9,26 +10,16 @@ import { DataService } from 'src/app/services/data.service';
 export class PokemonList implements OnInit {
 
     pokemons: any[] = [];
-    pokemonCollection: any[] = [];
-    //statusClass = 'not-active';
 
     constructor(
-        private dataService: DataService
+        private dataService: DataService, private router: Router
     ) { }
 
-    collectedPokemons(item) {
+    //add selected object to dataservice and go to detailpage
+    select(item) {
 
-        if (this.pokemonCollection.includes(item)) {
-            let temp = this.pokemonCollection.indexOf(item);
-            this.pokemonCollection.splice(temp, 1);
-            console.log(this.pokemonCollection);
-        }
-
-        else {
-            this.pokemonCollection.push(item);
-            console.log(this.pokemonCollection);
-
-        }
+        this.dataService.selectedPokemon(item);
+        this.router.navigate(['./detail'])
     }
 
     ngOnInit(): void {
@@ -38,7 +29,6 @@ export class PokemonList implements OnInit {
                     this.dataService.getMoreData(result.name)
                         .subscribe((uniqResponse: any) => {
                             this.pokemons.push(uniqResponse);
-                            console.log(this.pokemons);
                         });
                 });
             });

@@ -16,6 +16,14 @@ export class DetailPage implements OnInit {
 
     addToCollection() {
         this.dataService.collectedPokemons(this.selected);
+        console.log("tyyppi detaili on: " + typeof (this.selected));
+        console.log(Object.values(this.selected));
+        console.log("testiprintti" + this.selected);
+
+        const keys = Object.keys(this.selected);
+        console.log("avaimet" + keys);
+        console.log(this.selected["name"]);
+        console.log(this.selected["front_default"]);
     }
 
     //get selected pokemon from dataservice and save to a variable

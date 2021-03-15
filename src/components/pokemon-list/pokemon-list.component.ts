@@ -17,9 +17,6 @@ export class PokemonList implements OnInit {
 
     //add selected object to dataservice and go to detailpage
     select(item) {
-
-        console.log("tyyppi on: " + typeof (this.pokemons));
-        console.log("TESTI: " + this.pokemons);
         this.dataService.selectedPokemon(item);
         this.router.navigate(['./detail']);
     }
@@ -31,7 +28,6 @@ export class PokemonList implements OnInit {
                     this.dataService.getMoreData(result.name)
                         .subscribe((uniqResponse: any) => {
                             this.pokemons.push(uniqResponse);
-
                         });
                 });
             });

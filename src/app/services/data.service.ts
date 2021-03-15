@@ -25,7 +25,6 @@ export class DataService {
   //Add selected pokemon to dataservice variable
   selectedPokemon(item) {
     this.selected = item;
-    console.log("pushed to dataservice: " + this.selected);
   }
 
   //Return selected pokemon from dataservice

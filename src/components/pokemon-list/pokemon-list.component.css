@@ -12,3 +12,16 @@
     height: 300px;
     box-shadow: 1px 2px 5px rgb(43, 88, 90);
 }
+
+.active{
+    border : 1px solid black;
+    padding : 1rem;
+    background-color: aqua;
+    cursor: pointer;
+  }
+  
+  .not-active{
+    border : 1px solid black;
+    padding : 1rem;
+    cursor: pointer;
+  }

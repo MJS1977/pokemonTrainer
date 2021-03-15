@@ -9,10 +9,27 @@ import { DataService } from 'src/app/services/data.service';
 export class PokemonList implements OnInit {
 
     pokemons: any[] = [];
+    pokemonCollection: any[] = [];
+    //statusClass = 'not-active';
 
     constructor(
         private dataService: DataService
     ) { }
+
+    collectedPokemons(item) {
+
+        if (this.pokemonCollection.includes(item)) {
+            let temp = this.pokemonCollection.indexOf(item);
+            this.pokemonCollection.splice(temp, 1);
+            console.log(this.pokemonCollection);
+        }
+
+        else {
+            this.pokemonCollection.push(item);
+            console.log(this.pokemonCollection);
+
+        }
+    }
 
     ngOnInit(): void {
         this.dataService.getPokemons()
@@ -23,11 +40,7 @@ export class PokemonList implements OnInit {
                             this.pokemons.push(uniqResponse);
                             console.log(this.pokemons);
                         });
-
                 });
-
             });
     }
-
-    //title = 'pokemon detail komponentti';
 }

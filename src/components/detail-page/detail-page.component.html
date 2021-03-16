@@ -1,30 +1,27 @@
+<div id="links">
+    <h5 routerLink="/catalogue">Catalogue</h5>
+    <p> </p>
+    <h5 routerLink="/trainer">Collection</h5>
+</div>
+
+
 <div class="pokemon-grid">
     <div class="box">
         <img [src]="sprite" alt="pokemon">
         <h2>Base stats:</h2>
-        <h5>Name: {{this.selected["name"]}}</h5>
-        <h5>Type: {{this.selected["types"][0]["type"]["name"]}}</h5>
-        <h5>Base stats: {{this.selected["stats"][0]["base_stat"]}}</h5>
-
-
-
+        <p>Name: {{this.selected["name"]}}</p>
+        <p>Type: {{this.selected["types"][0]["type"]["name"]}}</p>
+        <p>Base stats: {{this.selected["stats"][0]["base_stat"]}}</p>
 
         <h2>Profile:</h2>
-        <h5>Height: {{this.selected["height"]}}</h5>
-        <h5>Weight: {{this.selected["weight"]}}</h5>
-        <h5>Abilities: </h5>
+        <p>Height: {{this.selected["height"]}}</p>
+        <p>Weight: {{this.selected["weight"]}}</p>
+        <p>Abilities: {{this.selected["abilities"][0]["ability"]["name"]}} </p>
+        <p>Base experience: {{this.selected["base_experience"]}}</p>
 
-        <h5>Moves: {{this.selected["moves"][0]["move"]["name"]}}</h5>
+        <h2>Moves:</h2>
+        <p>Moves: {{this.selected["moves"][0]["move"]["name"]}}</p>
 
-
-
-
-
-        <h5>Base experience: {{this.selected["base_experience"]}}</h5>
-
-
-
-
-        <button (click)="addToCollection()">add to collection</button>
+        <button id="add" (click)="addToCollection()" class="btn btn-primary">add/remove from collection</button>
     </div>
 </div>

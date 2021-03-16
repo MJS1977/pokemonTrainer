@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     TrainerPage,
     DetailPage,
     Header,
-    PokemonList
+    PokemonList,
 
   ],
   imports: [

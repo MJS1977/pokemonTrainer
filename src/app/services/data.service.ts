@@ -42,4 +42,9 @@ export class DataService {
       this.pokemonCollection.push(item);
     }
   }
+
+  //Return collected pokemons
+  getPokemonCollection() {
+    return this.pokemonCollection;
+  }
 }

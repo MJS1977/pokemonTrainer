@@ -12,19 +12,15 @@ export class DetailPage implements OnInit {
     selected: {};
     sprite: string;
 
-
-
     constructor(private dataService: DataService, private router: Router) { }
     title = 'detail komponentti';
 
-
+    //Add selected pokemon to collection
     addToCollection() {
         this.dataService.collectedPokemons(this.selected);
-        const keys = Object.keys(this.selected);
-        console.log("avaimet" + keys);
     }
 
-    //get selected pokemon from dataservice and save to a variable
+    //get selected pokemon from dataservice and save to a variable. Also save the spritelink to a variable
     ngOnInit(): void {
         this.selected = this.dataService.getSelectedPokemon();
         this.sprite = this.selected["sprites"]["front_default"];

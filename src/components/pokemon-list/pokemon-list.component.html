@@ -1,8 +1,14 @@
+<div id="links">
+
+    <p id="link-p"> </p>
+    <h5 routerLink="/trainer">Collection</h5>
+</div>
+
+
 <div class="pokemon-grid">
     <div (click)="select(pokemon)" [ngClass]="statusClass" class="box" *ngFor="let pokemon of pokemons">
         <img [src]="pokemon.sprites.front_default" alt="pokemon">
+        <br>
         <h4>Pokemon name: {{pokemon.name}}</h4>
-        <p>Pokemon weight: {{pokemon.weight}}</p>
-        <p>Pokemon height: {{pokemon.height}}</p>
     </div>
 </div>

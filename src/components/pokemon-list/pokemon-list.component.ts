@@ -21,6 +21,7 @@ export class PokemonList implements OnInit {
         this.router.navigate(['./detail']);
     }
 
+    //get the pokemon objects
     ngOnInit(): void {
         this.dataService.getPokemons()
             .subscribe((response: any) => {
